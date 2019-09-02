@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
-const Comment = require('./comment');
 
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
     title: String,
+    body: String,
     author: String,
     createDate: Date,
-    comments: [Comment],
+    comments: [{
+        title: String,
+        author: String,
+        createDate: Date,
+        meta: {
+            upvotes: Number,
+            downvotes: Number
+        }
+    }],
     meta: {
         upvotes: Number,
         downvotes: Number

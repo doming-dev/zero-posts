@@ -11,13 +11,25 @@
 .nav-bar{
     background-color: #2C3A49;
     display: flex;
+    align-items: center;
     font-size: .8rem;
 }
 
 .nav-link{
     text-decoration: none;
     color: #E0E0E0;
-    margin: 20px;
+}
+
+.link-icon-container{
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+}
+
+.link-icon{
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
 }
 
 .logo{
