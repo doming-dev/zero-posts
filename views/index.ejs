@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="home.css">
+    <link rel='stylesheet' href="/main.css">
+    <link rel='stylesheet' href="/nav.css">
+    <title>Home</title>
+</head>
+<body>
+    <%- include('nav.ejs') %>
+    <% if(posts.length > 0) { %>
+        <% for (let post of posts) { %>
+        <div class="post-container">
+            <p class="title-text"><%= post.title %></p>
+            <p class="short-body"><%= post.body.slice(0, 70) %>....</p>
+            <div class="meta-container">
+                <img src="/heart-neutral-up.png" alt="upvote ico">
+                <p class="meta-text"><%= post.upvotes %> </p>
+
+                <img src="/heart-neutral-down.png" alt="downvote ico">
+                <p class="meta-text"><%= post.downvotes %> </p>
+
+                <img src="/comment.png" alt="comment ico">
+                <p class="meta-text"><%= post.comments.length %> Comments</p>
+            </div>
+        </div>
+        <% } %>
+    <% } %>
+</body>
+</html>
