@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="home.css">
-    <link rel='stylesheet' href="/main.css">
-    <link rel='stylesheet' href="/nav.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel='stylesheet' href="/styles/main.css">
+    <link rel='stylesheet' href="/styles/nav.css">
     <title>Home</title>
 </head>
 <body>
     <%- include('nav.ejs') %>
+    <div class="new-post-container">
+        <img class="new-post-icon" src="/new-post.png" alt="new-post ico">        
+        <a href="/newpost" class="new-post-link">Create New Post</a>
+    </div>
     <% if(posts.length > 0) { %>
         <% for (let post of posts) { %>
         <div class="post-container">
-            <p class="title-text"><%= post.title %></p>
-            <p class="short-body"><%= post.body.slice(0, 70) %>....</p>
+            <a class="title-text" href="/"><%= post.title %></a>
+            <a class="short-body-text" href="/"><%= post.body.slice(0, 70) %>....</a>
             <div class="meta-container">
-                <img src="/heart-neutral-up.png" alt="upvote ico">
-                <p class="meta-text"><%= post.upvotes %> </p>
+                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                <p class="meta-text"><%= post.meta.upvotes %> </p>
 
-                <img src="/heart-neutral-down.png" alt="downvote ico">
-                <p class="meta-text"><%= post.downvotes %> </p>
+                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                <p class="meta-text"><%= post.meta.downvotes %> </p>
 
-                <img src="/comment.png" alt="comment ico">
+                <img class="comments-icon" src="/comment.png" alt="comment ico">
                 <p class="meta-text"><%= post.comments.length %> Comments</p>
             </div>
         </div>
