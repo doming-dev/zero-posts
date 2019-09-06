@@ -12,6 +12,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//comment for test
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
