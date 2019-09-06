@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href="/styles/main.css">
+    <link rel='stylesheet' href="/styles/nav.css">
+    <link rel='stylesheet' href="/styles/view-post.css">
+    <title><%=post.title%></title>
+</head>
+<body>
+    <%- include('nav.ejs') %>
+    <main>
+        <div class="header-container">
+            <h1><%= post.title %></h1>
+            <div>
+                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                <p class="meta-text"><%= post.meta.upvotes %> </p>
+        
+                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                <p class="meta-text"><%= post.meta.downvotes %> </p>
+        
+                <img class="comments-icon" src="/comment.png" alt="comment ico">
+                <p class="meta-text"><%= post.comments.length %> Comments</p>
+            </div>
+        </div>
+
+        <h4 class="author">Author: <%= post.author %> </h3>
+        <h4 class="date"><%= post.createDate %></h4>
+        <p class="body"><%= post.body %> </p>
+    </main>
+    
+    <% if(post.comments.length > 0) { %>
+        <% for(let comment of post.comments) {%>
+            <div>
+                <p>author: <%= comment.author %></p>
+                <p> <%= comment.createDate %> </p>
+
+                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                <p class="meta-text"><%= comment.upvotes %> </p>
+        
+                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                <p class="meta-text"><%= comment.downvotes %> </p>
+    
+                <p><%= comment.caption %></p>
+
+            </div>
+        <% } %>
+
+    <% } %>
+</body>
+</html>

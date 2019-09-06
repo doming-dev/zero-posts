@@ -8,7 +8,7 @@ const postSchema = new Schema({
     author: String,
     createDate: Date,
     comments: [{
-        title: String,
+        caption: String,
         author: String,
         createDate: Date,
         meta: {

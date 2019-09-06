@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+
+
+.meta-container{
+    display:flex;
+    align-items: center;
+}
+
+.upvotes-icon{
+    width: 35px;
+    height: auto;
+}
+
+.meta-text{
+    font-size: .9rem;
+}
+
+.downvotes-icon{
+    width: 35px;
+    height: auto;
+    margin-left: 10px;
+
+}
+
+.comments-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
+
+}
