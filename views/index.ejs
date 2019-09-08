@@ -19,7 +19,7 @@
         <% for (let post of posts) { %>
         <div class="post-container">
             <a class="title-text" href="/viewpost/<%= post._id %>"><%= post.title %></a>
-            <a class="short-body-text" href="/"><%= post.body.slice(0, 70) %>....</a>
+            <a class="short-body-text" href="/viewpost/<%= post._id %>"><%= post.body.slice(0, 70) %>....</a>
             <div class="meta-container">
                 <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
                 <p class="meta-text"><%= post.meta.upvotes %> </p>

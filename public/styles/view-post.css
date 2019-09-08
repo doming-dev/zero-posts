@@ -1,8 +1,47 @@
 
+.title{
+    margin: 10px;
+}
+
+.author{
+    margin: 10px;
+    font-size: .9rem;
+}
+
+.date {
+    margin: 10px;
+    font-size: .9rem;
+}
+
+.body{
+    margin: 10px 10px 30px 10px;
+}
 
 
 
+.comment-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.comment-area{
+    height: 100px;
+    width: 90%;
+    margin: 10px;
+}
+
+.btn-comment{
+    background-color: #34495e;
+    border: 1px #34495e;
+    font-weight: 500;
+    color: white;
+    padding: 15px;
+}
+
+.comment-container{
+    margin-right: 40px;
+}
 
 
 

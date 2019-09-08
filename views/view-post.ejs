@@ -13,8 +13,8 @@
     <%- include('nav.ejs') %>
     <main>
         <div class="header-container">
-            <h1><%= post.title %></h1>
-            <div>
+            <h1 class="title"><%= post.title %></h1>
+            <div class="meta-container">
                 <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
                 <p class="meta-text"><%= post.meta.upvotes %> </p>
         
@@ -27,27 +27,32 @@
         </div>
 
         <h4 class="author">Author: <%= post.author %> </h3>
-        <h4 class="date"><%= post.createDate %></h4>
+        <h4 class="date">Published: <%= post.createDate.toLocaleDateString()%></h4>
         <p class="body"><%= post.body %> </p>
     </main>
-    
+
+    <form class="comment-form" method="POST" action="add-comment">
+        <textarea class="comment-area" placeholder="Add a comment.."></textarea>
+        <button class="btn-comment" type="submit">Add Comment</button>    
+    </form>
+
     <% if(post.comments.length > 0) { %>
         <% for(let comment of post.comments) {%>
-            <div>
-                <p>author: <%= comment.author %></p>
-                <p> <%= comment.createDate %> </p>
+            <div class="comment-container">
+                <p>author: <%= comment.author %> author</p>
+                <p> <%= comment.createDate %> date </p>
 
-                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
-                <p class="meta-text"><%= comment.upvotes %> </p>
-        
-                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
-                <p class="meta-text"><%= comment.downvotes %> </p>
+                <div class="meta-container">
+                    <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                    <p class="meta-text"><%= comment.upvotes %> </p>
+            
+                    <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                    <p class="meta-text"><%= comment.downvotes %> </p>    
+                </div>
     
                 <p><%= comment.caption %></p>
-
             </div>
         <% } %>
-
     <% } %>
 </body>
 </html>
