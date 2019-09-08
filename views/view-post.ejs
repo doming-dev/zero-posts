@@ -7,6 +7,7 @@
     <link rel='stylesheet' href="/styles/main.css">
     <link rel='stylesheet' href="/styles/nav.css">
     <link rel='stylesheet' href="/styles/view-post.css">
+    <script src="/scripts/like.js"></script>
     <title><%=post.title%></title>
 </head>
 <body>
@@ -15,11 +16,11 @@
         <div class="header-container">
             <h1 class="title"><%= post.title %></h1>
             <div class="meta-container">
-                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
-                <p class="meta-text"><%= post.meta.upvotes %> </p>
+                <img id="like" class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                <p id="likeCount" class="meta-text"><%= post.meta.upvotes %> </p>
         
-                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
-                <p class="meta-text"><%= post.meta.downvotes %> </p>
+                <img id="dislike" class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                <p id="dislikeCount" class="meta-text"><%= post.meta.downvotes %> </p>
         
                 <img class="comments-icon" src="/comment.png" alt="comment ico">
                 <p class="meta-text"><%= post.comments.length %> Comments</p>
@@ -28,7 +29,7 @@
 
         <h4 class="author">Author: <%= post.author %> </h3>
         <h4 class="date">Published: <%= post.createDate.toLocaleDateString()%></h4>
-        <p class="body"><%= post.body %> </p>
+        <pre class="body"><%-post.body%> </pre>
     </main>
 
     <form class="comment-form" method="POST" action="add-comment">

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/home.css">
     <link rel='stylesheet' href="/styles/main.css">
     <link rel='stylesheet' href="/styles/nav.css">
+    <script src="/scripts/like.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -21,11 +22,11 @@
             <a class="title-text" href="/viewpost/<%= post._id %>"><%= post.title %></a>
             <a class="short-body-text" href="/viewpost/<%= post._id %>"><%= post.body.slice(0, 70) %>....</a>
             <div class="meta-container">
-                <img class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
-                <p class="meta-text"><%= post.meta.upvotes %> </p>
-
-                <img class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
-                <p class="meta-text"><%= post.meta.downvotes %> </p>
+                <img id="like" class="upvotes-icon" src="/heart-neutral-up.png" alt="upvote ico">
+                <p id="likeCount" class="meta-text"><%= post.meta.upvotes %> </p>
+        
+                <img id="dislike" class="downvotes-icon" src="/heart-neutral-down.png" alt="downvote ico">
+                <p id="dislikeCount" class="meta-text"><%= post.meta.downvotes %> </p>
 
                 <img class="comments-icon" src="/comment.png" alt="comment ico">
                 <p class="meta-text"><%= post.comments.length %> Comments</p>

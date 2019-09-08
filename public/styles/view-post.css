@@ -4,17 +4,19 @@
 }
 
 .author{
-    margin: 10px;
+    margin: 10px 0 3px 10px;
     font-size: .9rem;
 }
 
 .date {
-    margin: 10px;
+    margin: 3px 0 20px 10px;
     font-size: .9rem;
 }
 
 .body{
     margin: 10px 10px 30px 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 
@@ -49,22 +51,36 @@
 .meta-container{
     display:flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .upvotes-icon{
+    width: 30px;
+    height: auto;
+    transition: width 0.2s;
+}
+
+.upvotes-icon:hover{
     width: 35px;
     height: auto;
+    cursor: pointer;
 }
 
 .meta-text{
     font-size: .9rem;
 }
 
-.downvotes-icon{
+.downvotes-icon:hover{
     width: 35px;
     height: auto;
-    margin-left: 10px;
+    cursor: pointer;
+}
 
+.downvotes-icon{
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+    transition: width 0.2s;
 }
 
 .comments-icon{
