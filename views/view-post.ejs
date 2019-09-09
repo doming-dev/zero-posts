@@ -30,6 +30,7 @@
         <h4 class="author">Author: <%= post.author %> </h3>
         <h4 class="date">Published: <%= post.createDate.toLocaleDateString()%></h4>
         <pre class="body"><%-post.body%> </pre>
+        <input id="post-id" type="hidden" value="<%= post._id %>">
     </main>
 
     <form class="comment-form" method="POST" action="add-comment">
