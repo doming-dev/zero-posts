@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/styles/home.css">
     <link rel='stylesheet' href="/styles/main.css">
     <link rel='stylesheet' href="/styles/nav.css">
-    <script src="/scripts/like.js"></script>
+    <script src="/scripts/nav.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -31,6 +31,7 @@
                 <img class="comments-icon" src="/comment.png" alt="comment ico">
                 <p class="meta-text"><%= post.comments.length %> Comments</p>
             </div>
+            <input type="hidden" id='post-id' value='<%= post._id %>'>
         </div>
         <% } %>
     <% } %>

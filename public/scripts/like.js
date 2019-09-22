@@ -50,8 +50,7 @@ window.onload = function() {
 
     const likeElement = this.document.getElementById('like');
     const likeCountElement = this.document.getElementById('likeCount');
-    const postId = this.document.getElementById('post-id').value;
-
+    const postId = document.getElementById('post-id').value;
     let likedClicked = false;
 
     likeElement.onclick = function() {
@@ -65,14 +64,15 @@ window.onload = function() {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).
-            then(res => {
-                console.log(res.status);
-                res.json();
-            }).
-            then(resData => {
-                console.log(resData);
-            }).catch(err => console.log(err));
+            })
+                .then(res => {
+                    console.log(res.status);
+                    res.json();
+                })
+                .then(resData => {
+                    console.log(resData);
+                })
+                .catch(err => console.log(err));
 
             likeElement.src = '/heart-active-up.png';
             likeElement.style.opacity = '0.5';
