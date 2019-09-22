@@ -1,4 +1,6 @@
-window.onload = function() {
+window.addEventListener('load', function() {
+    console.log('script loaded');
+
     const dislikeElement = this.document.getElementById('dislike');
     const disLikeCountElement = this.document.getElementById('dislikeCount');
 
@@ -54,6 +56,8 @@ window.onload = function() {
     let likedClicked = false;
 
     likeElement.onclick = function() {
+        console.log('like clicked');
+
         if (likedClicked) {
             fetch(`http://localhost:5000/like/${postId}`, {
                 method: 'POST',
@@ -133,4 +137,5 @@ window.onload = function() {
         likeElement.src = '/heart-neutral-up.png';
         likeElement.style.opacity = '1';
     };
-};
+
+});
