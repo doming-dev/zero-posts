@@ -9,6 +9,7 @@ const MongoDbStore = require('connect-mongodb-session')(session);
 const postRoutes = require('./routes/post-routes');
 const homeRoutes = require('./routes/home-routes');
 const metaRoutes = require('./routes/meta-routes');
+const authRoutes = require('./routes/auth-routes');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(
 
 app.use(homeRoutes);
 app.use(postRoutes);
+app.use(authRoutes);
 app.use(metaRoutes);
 
 mongoose

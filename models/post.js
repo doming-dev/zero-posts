@@ -19,7 +19,8 @@ const postSchema = new Schema({
     meta: {
         upvotes: Number,
         downvotes: Number
-    }
+    },
+    user: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = mongoose.model('Post', postSchema);
